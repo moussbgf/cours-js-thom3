@@ -1,3 +1,4 @@
+##Intro
 premier cours angularJS
 
 avec Thomas Moyse
@@ -5,9 +6,7 @@ avec Thomas Moyse
 10/05/2017
 
 
-commande de configuration initiale :
-
-##configuration initiale
+##configuration initiale :
 
 ##1. Creation du fichier package.json
 ## contient les dependances
@@ -105,3 +104,7 @@ angular.module('app', [])
 `npm i bootstrap -S`
 
 `npm i css-loader file-loader style-loader -D`
+
+
+## Linter
+`npm i standard -D`
