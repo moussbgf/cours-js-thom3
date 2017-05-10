@@ -7,30 +7,30 @@ avec Thomas Moyse
 
 commande de configuration initiale :
 
-//configuration initiale
+##configuration initiale
 
-//1. Creation du fichier package.json
-// contient les dependances
+##1. Creation du fichier package.json
+## contient les dependances
 npm init -y
 
 
-// installe toute les dependences menquantes
+## installe toute les dependences menquantes
 npm i
 
 
-// 2. installation de angular
+## 2. installation de angular
 npm i angular -S
 
 
-// 3. installation de webpack + webpack dev server
+## 3. installation de webpack + webpack dev server
 npm i  webpack webpack-dev-server -D
 
 
-// 4. installation de babel
+## 4. installation de babel
 npm i babel-core babel-loader babel-preset-env -D
 
 
-// 5. Configuration de webpack : webpack.config.js
+## 5. Configuration de webpack : webpack.config.js
 ```js
 const path = require('path');
 
@@ -68,19 +68,40 @@ module.exports = {
 }
 ```
 
-// 6. Modifier package.json
+## 6. Modifier package.json
 ```json
 ...
     "dev:server": "webpack-dev-server --open",
 ...
 ```
 
-// 7. Créer fichier dist/index.html
+## 7. Créer fichier dist/index.html
 ```html
 ...
 <script src="bundle.js"></script>
 ...
 ```
 
-// 8. Lancer le server
+## 8. Lancer le server
 ```npm run dev:server```
+
+## Utilisation de AngularJS
+
+```js
+// app/index.js
+import angular from 'angular';
+
+angular.module('app', [])
+```
+
+```html
+...
+<body ng-app="app">
+</body>
+...
+```
+## Bootstrap
+
+`npm i bootstrap -S`
+
+`npm i css-loader file-loader style-loader -D`

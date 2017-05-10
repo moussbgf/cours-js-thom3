@@ -1,5 +1,6 @@
 //angular
 import angular from 'angular';
+import css from 'bootstrap/dist/css/bootstrap.css';
 
 // Création du module app (application) 1ere methode
 //let app = angular.module('app', []);
