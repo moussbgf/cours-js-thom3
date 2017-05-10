@@ -3,12 +3,12 @@ const path = require('path');
 module.exports = {
     entry: "./app",
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "app"),
         filename: "bundle.js"
     },
 
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, "app"),
         compress: true,
         port: 9000,
         historyApiFallback: true

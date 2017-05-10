@@ -5,23 +5,11 @@ export class TabsController {
 
         this.tabs = [{
                 title: 'User',
-                content: 'Contenu un'
+                template: 'user'
             },
             {
                 title: 'Application',
-                content: 'APPLICATION'
-            },
-            {
-                title: 'Un',
-                content: 'Contenu un'
-            },
-            {
-                title: 'Deux',
-                content: 'Contenu deux'
-            },
-            {
-                title: 'Trois',
-                content: 'Contenu trois'
+                template: 'application'
             }
         ];
 
@@ -44,6 +32,10 @@ export class TabsController {
         return;
       }
       this.tab += direction;
+    }
+
+    getTemplate (tab) {
+        return `views/${tab.template}.html`;
     }
 
 }

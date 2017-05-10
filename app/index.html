@@ -16,22 +16,6 @@
 
 <body ng-app="app">
     <div class="container" ng-controller="TabsController as $ctrl">
-        <!-- <p>test</p>
-        <button class="btn">TEST</button>
-
-        <br>
-
-        <h1 ng-controller="UserController as $ctrl">
-        Bonjour {{ $ctrl.getName() }}
-        </h1>
-
-        <div class="test" ng-controller="ApplicationInfoController as $ctrl">
-            <strong>{{ $ctrl.name }}</strong>
-            <span ng-if="$ctrl.show">{{ $ctrl.version }}</span>
-            <button class="btn" ng-click="$ctrl.showVersion()">
-            SHOW VERSION
-            </button>
-        </div> -->
 
         <ul class="nav nav-tabs" >
             <li ng-repeat="tab in $ctrl.tabs track by $index"
@@ -52,22 +36,18 @@
             </li>
         </ul>
 
-        <div ng-repeat="tab in $ctrl.tabs track by $index"
+        <!-- <div ng-repeat="tab in $ctrl.tabs track by $index"
         ng-if=" $ctrl.tab  ===  $index ">
-            <h1 >{{ tab.content }}</h1>
-        </div>
-
-        <!-- <div
-            ng-if="$ctrl.tab === 'application'"
-            ng-controller="ApplicationInfoController as $ctrl">
-
-            <ul>
-                <li ng-repeat="user in $ctrl.users track by $index">
-                    {{ user.name }}
-                </li>
-            </ul>
-
+            <h1 >{{ tab.template }}</h1>
         </div> -->
+
+        <h2><ng-include
+            ng-repeat="tab in $ctrl.tabs track by $index"
+            ng-if="$ctrl.tab === $index"
+            src="$ctrl.getTemplate(tab)"></ng-include>
+        </h2>
+
+            <pre>{{ "mouss" | reverse }}</pre>
 
 
     </div>

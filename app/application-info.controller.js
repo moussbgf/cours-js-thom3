@@ -5,6 +5,7 @@ export class ApplicationInfoController  {
         this.name = 'Burger';
         this.version = 'version 1.0';
         this.show = false;
+        this.date = new Date(2012, 10, 10);
 
         this.users = [{
                 name: 'John',
