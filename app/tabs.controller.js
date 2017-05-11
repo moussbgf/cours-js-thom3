@@ -10,6 +10,10 @@ export class TabsController {
             {
                 title: 'Application',
                 template: 'application'
+            },
+            {
+                title: 'Burgers',
+                template: 'burgers'
             }
         ];
 

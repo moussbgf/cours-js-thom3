@@ -105,6 +105,24 @@ angular.module('app', [])
 
 `npm i css-loader file-loader style-loader -D`
 
-
 ## Linter
+
 `npm i standard -D`
+
+## json-server & npm-run-all
+
+`npm i json-server npm-run-all`
+
+package.json :
+
+```json
+...
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+    "dev:server": "webpack-dev-server --open",
+    "dev:api": "json-server db.json -w"
+  }
+...
+```
+
+Créer le fichier db.json à la racine.

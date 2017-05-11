@@ -1,12 +1,14 @@
-export class ApplicationInfoController  {
+export class ApplicationInfoController {
+    constructor(BurgerService) {
+        this.info = {
+            name: 'Burger',
+            version: '1.0.0',
+            date: new Date(2012, 10, 10)
+        };
 
-    constructor() {
-        console.log('ApplicationInfoController  !');
-        this.name = 'Burger';
-        this.version = 'version 1.0';
-        this.show = false;
-        this.date = new Date(2012, 10, 10);
+        console.log(this.info.name);
 
+        this.showVersion = false;
         this.users = [{
                 name: 'John',
                 email: 'test@ici'
@@ -24,15 +26,9 @@ export class ApplicationInfoController  {
                 email: 'ouliu@ici'
             }
         ];
-
     }
 
-    showVersion() {
-        console.log(this.show);
-
-        this.show = !this.show;
-
-        console.log(this.show);
+    toggleVersion() {
+        this.showVersion = !this.showVersion;
     }
-
 }
