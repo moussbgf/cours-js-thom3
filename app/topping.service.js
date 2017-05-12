@@ -10,6 +10,8 @@ export class ToppingService {
     // return promise of toppings
     getToppings () {
         if (this.toppings.length !== 0) {
+            // return Promise.resolve(this.toppings)
+            // $q permet d'utiliser le cache et prévenir le DOM
             return this.$q.resolve(this.toppings);
         }
 

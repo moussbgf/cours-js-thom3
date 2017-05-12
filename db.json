@@ -28,6 +28,14 @@
         "tomate"
       ],
       "creator": "paul@ici.fr"
+    },
+    {
+      "name": "test2",
+      "toppings": [
+        "ketchup"
+      ],
+      "creator": "ergerg@erg",
+      "id": 5
     }
   ],
   "toppings": [
