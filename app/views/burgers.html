@@ -1,4 +1,4 @@
-<div class="row" ng-controller="BurgersController as $ctrl">
+<div class="container">
 
     <div class="col-sm-6">
 
@@ -8,17 +8,11 @@
             <thead>
                 <tr>
                     <th style="width: 50%">
-                        <a ng-click="$ctrl.sortBy('name')"
-                            href
-                            class="sort"
-                            ng-class="{ up: $ctrl.col === 'name' && !$ctrl.desc, down: $ctrl.col === 'name' && $ctrl.desc }">Name</a>
+                        <a ng-click="$ctrl.sortBy('name')" href class="sort" ng-class="{ up: $ctrl.col === 'name' && !$ctrl.desc, down: $ctrl.col === 'name' && $ctrl.desc }">Name</a>
                         <input ng-model="name" type="text" class="form-control input-sm">
                     </th>
                     <th>
-                        <a ng-click="$ctrl.sortBy('toppings')"
-                        href
-                        class="sort"
-                            ng-class="{ up: $ctrl.col === 'toppings' && !$ctrl.desc, down: $ctrl.col === 'toppings' && $ctrl.desc }">Toppings</a>
+                        <a ng-click="$ctrl.sortBy('toppings')" href class="sort" ng-class="{ up: $ctrl.col === 'toppings' && !$ctrl.desc, down: $ctrl.col === 'toppings' && $ctrl.desc }">Toppings</a>
                         <select ng-model="toppings" class="form-control input-sm">
                             <option value=""></option>
                             <option ng-value="topping"
@@ -35,62 +29,25 @@
                 | orderBy:$ctrl.applySort.bind($ctrl):$ctrl.desc
                 track by $index">
                     <td>
-                        <a href ng-click="$ctrl.editBurger(burger)">{{ burger.name }}</a>
+                        <a ng-href="/burger/{{burger.id}}">{{ burger.name }} </a>
+                        <!-- <a href class="glyphicon glyphicon-wrench" ng-click="$ctrl.editBurger(burger)"></a> -->
                     </td>
                     <td>
                         {{ burger.toppings.length }} : {{ burger.toppings.join(',') }}
                     </td>
+                    <td>
+                        <button ng-click="$ctrl.removeBurger(burger)" class="btn btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
 
-    </div>
-    <div class="col-sm-6">
-
-        <h3 ng-if="!$ctrl.newburger.id">Add a new burger</h3>
-        <h3 ng-if="$ctrl.newburger.id">Edit this burger</h3>
-
-        <form name="burgerForm" novalidate ng-submit="$ctrl.save(burgerForm)">
-
-            <div class="form-group">
-                <label for="burgername">Burger name *</label>
-                <input type="text"
-                    id="burgername"
-                    name="name"
-                    required
-                    ng-model="$ctrl.newburger.name"
-                    class="form-control">
-                <p ng-if="burgerForm.name.$error.required && burgerForm.name.$touched" class="text-danger">required !</p>
-            </div>
-
-            <div class="form-group">
-                <label for="burgertoppings">Toppings</label>
-                <select
-                    name="toppings"
-                    id="burgertoppings"
-                    multiple="true"
-                    class="form-control"
-                    ng-model="$ctrl.newburger.toppings">
-                        <option ng-value="topping"
-                            ng-repeat="topping in $ctrl.getToppings() track by $index">
-                            {{ topping }}
-                        </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="burgercreator">Creator email</label>
-                <input type="email"
-                    name="creator"
-                    id="burgercreator"
-                    ng-model="$ctrl.newburger.creator"
-                    class="form-control">
-                <p ng-if="burgerForm.creator.$invalid" class="text-danger">email, morron</p>
-            </div>
-
-            <button type="submit" class="btn btn-primary"
-                ng-disabled="burgerForm.$invalid">save</button>
-        </form>
+        <a ng-href="/burger/" class="btn btn-primary">
+            <span class="glyphicon glyphicon-plus"></span> Add Burger
+        </a>
 
     </div>
 

@@ -17,10 +17,18 @@
             content: ' ↓'
         }
     </style>
+    <base href="/">
 </head>
 <body ng-app="app">
 
-    <div class="container" ng-controller="TabsController as $ctrl">
+    <h1>WELCOME ! </h1>
+
+    <a href="/burgers">BURGERS</a>
+    <a href="/game">GAME</a>
+
+    <div ng-view class="container"></div>
+
+    <!-- <div class="container" ng-controller="TabsController as $ctrl">
 
         <ul class="nav nav-tabs">
             <li ng-repeat="tab in $ctrl.tabs track by $index"
@@ -46,6 +54,6 @@
             ng-if="$ctrl.tab === $index"
             src="$ctrl.getTemplate(tab)"></ng-include>
 
-    </div>
+    </div> -->
 </body>
 </html>
