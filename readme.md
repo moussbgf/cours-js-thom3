@@ -126,3 +126,15 @@ package.json :
 ```
 
 Créer le fichier db.json à la racine.
+
+
+## Routing
+
+`npm i angular-route -S`
+
+```js
+// webpack.config.json
+devServer {
+    ...
+    historyApiFallback: true
+}
