@@ -138,3 +138,17 @@ devServer {
     ...
     historyApiFallback: true
 }
+
+
+## Raw (html) loader
+
+`npm i raw-loader -D`
+
+```js
+// webpack.config.js
+{
+    test: /\.html$/,
+    exclude: [/node_modules/],
+    loader: 'raw-loader',
+},
+```
