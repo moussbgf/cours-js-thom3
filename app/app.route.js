@@ -22,6 +22,11 @@ export function route ($routeProvider, $locationProvider) {
         controllerAs: '$ctrl'
     })
 
+    .when('/play', {
+        template: '<dta-game></dta-game>'
+    })
+
+
     .otherwise({
         redirectTo: '/'
         // template: 'PAS TROUVÉ !'

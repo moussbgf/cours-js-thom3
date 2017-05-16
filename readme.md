@@ -5,6 +5,8 @@ avec Thomas Moyse
 
 10/05/2017
 
+/play (utilisation des componoents)
+/ ( utilisation des modules controleur)
 
 ##configuration initiale :
 

@@ -2,8 +2,10 @@ import './game.component.css';
 import template from './game.component.html';
 
 class controller {
-    constructor (ToppingService) {
+    constructor (ToppingService, $location) {
         this.ToppingService = ToppingService;
+        this.$location = $location;
+        this.score = 0;
     }
 
     $onInit () {
@@ -34,6 +36,11 @@ class controller {
 
     gameover () {
         this.running = false;
+        //this.$location.path('/');
+    }
+
+    updateScore (score) {
+        this.score += score;
     }
 }
 
