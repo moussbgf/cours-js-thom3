@@ -21,11 +21,14 @@ import { ToppingsComponent } from './toppings/toppings.component';
 import { BurgerComponent } from './burger/burger.component';
 import { RecipeComponent } from './recipe/recipe.component';
 
+import CountdownModule from './countdown';
+
 
 // Création du module app (application)
 angular.module('app', [
     RouteModule, // 'ngRoute'
     //'DtaGravatarModule'
+    CountdownModule
 ])
 
 //.component('dtaGravatar', GravatarComponent)
