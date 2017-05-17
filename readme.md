@@ -1,7 +1,7 @@
 ##Intro
 premier cours angularJS
 
-avec Thomas Moyse
+avec T. M.
 
 10/05/2017
 
